@@ -44,7 +44,7 @@ class AllChats extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 28,
-                          backgroundImage: AssetImage(allChat.avatar!),
+                          backgroundImage: AssetImage(allChat.avatar),
                         ),
                         SizedBox(
                           width: 20,
@@ -54,13 +54,13 @@ class AllChats extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              allChat.sender!.name!,
+                              allChat.sender.name,
                               style: MyTheme.heading2.copyWith(
                                 fontSize: 16,
                               ),
                             ),
                             Text(
-                              allChat.text!,
+                              allChat.text,
                               style: MyTheme.bodyText1,
                             ),
                           ],
@@ -89,7 +89,7 @@ class AllChats extends StatelessWidget {
                               height: 10,
                             ),
                             Text(
-                              allChat.time!,
+                              allChat.time,
                               style: MyTheme.bodyTextTime,
                             )
                           ],

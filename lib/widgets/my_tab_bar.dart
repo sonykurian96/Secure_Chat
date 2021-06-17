@@ -3,11 +3,11 @@ import '../app_theme.dart';
 
 class MyTabBar extends StatelessWidget {
   const MyTabBar({
-    Key? key,
-    required this.tabController,
+    Key key,
+    @required this.tabController,
   }) : super(key: key);
 
-  final TabController? tabController;
+  final TabController tabController;
 
   @override
   Widget build(BuildContext context) {

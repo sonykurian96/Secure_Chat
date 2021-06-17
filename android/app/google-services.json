@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "258404522939",
+    "project_id": "last-hope-1a0b3",
+    "storage_bucket": "last-hope-1a0b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258404522939:android:cc207e6a51ca3f06e5429e",
+        "android_client_info": {
+          "package_name": "com.example.chattie_ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258404522939-o0j80408hljkpd1plib8k4vr3gbglmqm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl-mUKP6AkoPWednIhoFcBOocWJl3WMok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258404522939-o0j80408hljkpd1plib8k4vr3gbglmqm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

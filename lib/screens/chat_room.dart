@@ -1,25 +1,22 @@
 import 'package:chattie_ui/custom_UI/ownMessageModel.dart';
 import 'package:chattie_ui/custom_UI/replyCard.dart';
-import 'package:dash_chat/dash_chat.dart';
 import 'package:keyboard_attachable/keyboard_attachable.dart';
-import 'package:socket_io_client/socket_io_client.dart' as IO;
+
 import '../app_theme.dart';
 import 'package:flutter/material.dart';
 import '../models/user_model.dart';
 import '../widgets/widgets.dart';
 
 // server
-
 class ChatRoom extends StatefulWidget {
-  const ChatRoom({Key? key, required this.user}) : super(key: key);
+  const ChatRoom({Key key, @required this.user}) : super(key: key);
 
   @override
   _ChatRoomState createState() => _ChatRoomState();
-  final User? user;
+  final User user;
 }
 
 class _ChatRoomState extends State<ChatRoom> {
-  IO.Socket socket;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +29,7 @@ class _ChatRoomState extends State<ChatRoom> {
             CircleAvatar(
               radius: 23,
               backgroundImage: AssetImage(
-                widget.user!.avatar!,
+                widget.user.avatar,
               ),
             ),
             SizedBox(
@@ -42,7 +39,7 @@ class _ChatRoomState extends State<ChatRoom> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.user!.name!,
+                  widget.user.name,
                   style: MyTheme.chatSenderName,
                 ),
                 Text(

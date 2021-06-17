@@ -1,9 +1,10 @@
+import 'package:chattie_ui/backend/methods.dart';
+import 'package:chattie_ui/screens/customScreen.dart';
 import 'package:chattie_ui/screens/select_contact.dart';
 
 import '../app_theme.dart';
 import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
-import '../screens/screen.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,12 +12,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  TabController? tabController; // nullable
+  TabController tabController; // nullable
   int currentTabIndex = 0;
 
   void onTabChange() {
     setState(() {
-      currentTabIndex = tabController!.index; // null check
+      currentTabIndex = tabController.index; // null check
       print(currentTabIndex);
     });
   }
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     tabController = TabController(length: 4, vsync: this);
 
-    tabController!.addListener(() {
+    tabController.addListener(() {
       onTabChange();
     });
     super.initState();
@@ -33,11 +34,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    tabController!.addListener(() {
+    tabController.addListener(() {
       onTabChange();
     });
 
-    tabController!.dispose();
+    tabController.dispose();
 
     super.dispose();
   }
@@ -63,6 +64,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           style: MyTheme.kAppTitle,
         ),
         actions: [
+          IconButton(icon: Icon(Icons.logout),
+            onPressed: () => logOut(context),
+          ),
           IconButton(
             icon: Icon(Icons.camera_alt),
             onPressed: () {},
@@ -86,7 +90,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               child: TabBarView(
                 controller: tabController,
                 children: [
-                  ChatPage(),
+                  CustomScreen(),
                   Center(child: Text('Group')),
                   Center(child: Text('Status')),
                   Center(child: Text('Call')),

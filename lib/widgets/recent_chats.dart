@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 import '../models/message_model.dart';
 import '../screens/screen.dart';
 
-import '../app_theme.dart';
+// import '../app_theme.dart';
 
 class RecentChats extends StatelessWidget {
   const RecentChats({
-    Key? key,
+    Key key,
   }) : super(key: key);
 
   @override
@@ -84,11 +84,11 @@ class RecentChats extends StatelessWidget {
                     CircleAvatar(
                       radius: 30.0,
                       backgroundImage:
-                          AssetImage(recentChat.avatar!),
+                          AssetImage(recentChat.avatar),
                     ),
                     SizedBox(height: 6.0),
                     Text(
-                      recentChat.sender!.name!,
+                      recentChat.sender.name,
                       style: TextStyle(
                         color: Colors.blueGrey,
                         fontSize: 16.0,
@@ -105,77 +105,5 @@ class RecentChats extends StatelessWidget {
             ],
           ),
     );
-    //     ListView.builder(
-    //         shrinkWrap: true,
-    //         physics: ScrollPhysics(),
-    //         itemCount: recentChats.length,
-    //         itemBuilder: (context, int index) {
-    //           final recentChat = recentChats[index];
-    //           return Container(
-    //               margin: const EdgeInsets.only(top: 20),
-    //               child: Row(
-    //                 children: [
-    //                   CircleAvatar(
-    //                     radius: 28,
-    //                     backgroundImage: AssetImage(recentChat.avatar!),
-    //                   ),
-    //                   SizedBox(
-    //                     width: 20,
-    //                   ),
-    //                   GestureDetector(
-    //                     onTap: () {
-    //                       Navigator.push(context,
-    //                           CupertinoPageRoute(builder: (context) {
-    //                         return ChatRoom(
-    //                           user: recentChat.sender,
-    //                         );
-    //                       }));
-    //                     },
-    //                     child: Column(
-    //                       crossAxisAlignment: CrossAxisAlignment.start,
-    //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //                       children: [
-    //                         Text(
-    //                           recentChat.sender!.name!,
-    //                           style: MyTheme.heading2.copyWith(
-    //                             fontSize: 16,
-    //                           ),
-    //                         ),
-    //                         Text(
-    //                           recentChat.text!,
-    //                           style: MyTheme.bodyText1,
-    //                         ),
-    //                       ],
-    //                     ),
-    //                   ),
-    //                   Spacer(),
-    //                   Column(
-    //                     crossAxisAlignment: CrossAxisAlignment.end,
-    //                     children: [
-    //                       CircleAvatar(
-    //                         radius: 8,
-    //                         backgroundColor: MyTheme.kUnreadChatBG,
-    //                         child: Text(
-    //                           recentChat.unreadCount.toString(),
-    //                           style: TextStyle(
-    //                               color: Colors.white,
-    //                               fontSize: 11,
-    //                               fontWeight: FontWeight.bold),
-    //                         ),
-    //                       ),
-    //                       SizedBox(
-    //                         height: 10,
-    //                       ),
-    //                       Text(
-    //                         recentChat.time!,
-    //                         style: MyTheme.bodyTextTime,
-    //                       )
-    //                     ],
-    //                   ),
-    //                 ],
-    //               ));
-    //         })
-    //   ],
-    // );
   }
 }

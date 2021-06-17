@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SelectContact extends StatefulWidget {
-  const SelectContact({Key? key}) : super(key: key);
+  const SelectContact({Key key}) : super(key: key);
 
   @override
   _SelectContactState createState() => _SelectContactState();

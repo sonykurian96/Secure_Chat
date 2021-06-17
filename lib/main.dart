@@ -1,10 +1,14 @@
+import 'package:chattie_ui/backend/authenticate.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import './app_theme.dart';
 import './screens/screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp(MyApp());
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MaterialApp(home: Authenticate()));
 }
 
 class MyApp extends StatelessWidget {
