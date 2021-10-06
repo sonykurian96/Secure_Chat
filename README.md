@@ -1,4 +1,4 @@
-# Secure Chat
+# Secure Chat (Project abandoned)
 
 
 
